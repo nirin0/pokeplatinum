@@ -1,7 +1,7 @@
-#ifndef POKEPLATINUM_OV101_021D0D80_H
-#define POKEPLATINUM_OV101_021D0D80_H
+#ifndef POKEPLATINUM_SLOT_MACHINE_MAIN_H
+#define POKEPLATINUM_SLOT_MACHINE_MAIN_H
 
-#include "overlay101/struct_ov101_021D13C8_decl.h"
+#include "slot_machine/struct_ov101_021D13C8_decl.h"
 
 #include "enums.h"
 #include "overlay_manager.h"
@@ -16,4 +16,4 @@ void ov101_021D1894(UnkStruct_ov101_021D13C8 *param0, UnkEnum_ov101_021D1894 par
 void *ov101_021D1998(u32 param0);
 void *ov101_021D19E4(UnkStruct_ov101_021D13C8 *param0, u32 param1, int param2);
 
-#endif // POKEPLATINUM_OV101_021D0D80_H
+#endif // POKEPLATINUM_SLOT_MACHINE_MAIN_H

@@ -1,7 +1,7 @@
-#ifndef POKEPLATINUM_OV101_021D59AC_H
-#define POKEPLATINUM_OV101_021D59AC_H
+#ifndef POKEPLATINUM_SLOT_MACHINE_ANIM_H
+#define POKEPLATINUM_SLOT_MACHINE_ANIM_H
 
-#include "overlay101/struct_ov101_021D13C8_decl.h"
+#include "slot_machine/struct_ov101_021D13C8_decl.h"
 
 #include "enums.h"
 #include "overworld_anim_manager.h"
@@ -29,4 +29,4 @@ OverworldAnimManager *ov101_021D77E4(UnkStruct_ov101_021D13C8 *param0, UnkEnum_o
 OverworldAnimManager *ov101_021D79BC(UnkStruct_ov101_021D13C8 *param0, u32 param1);
 OverworldAnimManager *ov101_021D7B08(UnkStruct_ov101_021D13C8 *param0);
 
-#endif // POKEPLATINUM_OV101_021D59AC_H
+#endif // POKEPLATINUM_SLOT_MACHINE_ANIM_H

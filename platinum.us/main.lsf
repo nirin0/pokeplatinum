@@ -1510,14 +1510,14 @@ Overlay overlay100
 	Object main.nef.p/src_overlay100_ov100_021D4E04.c.o
 }
 
-Overlay overlay101
+Overlay slot_machine
 {
 	After main
-	Object main.nef.p/src_overlay101_ov101_021D0D80.c.o
-	Object main.nef.p/src_overlay101_ov101_021D1A28.c.o
-	Object main.nef.p/src_overlay101_ov101_021D59AC.c.o
-	Object main.nef.p/src_overlay101_ov101_021D7E48.c.o
-	Object main.nef.p/src_overlay101_ov101_021D94D8.c.o
+	Object main.nef.p/src_slot_machine_slot_machine_main.c.o
+	Object main.nef.p/src_slot_machine_slot_machine_lib.c.o
+	Object main.nef.p/src_slot_machine_slot_machine_anim.c.o
+	Object main.nef.p/src_slot_machine_slot_machine_sprites.c.o
+	Object main.nef.p/src_slot_machine_slot_machine_data.c.o
 }
 
 Overlay diploma

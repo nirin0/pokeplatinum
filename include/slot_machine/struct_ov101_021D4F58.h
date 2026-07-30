@@ -1,7 +1,7 @@
 #ifndef POKEPLATINUM_STRUCT_OV101_021D4F58_H
 #define POKEPLATINUM_STRUCT_OV101_021D4F58_H
 
-#include "overlay101/struct_ov101_021D13C8_decl.h"
+#include "slot_machine/struct_ov101_021D13C8_decl.h"
 
 typedef struct {
     UnkStruct_ov101_021D13C8 *unk_00;

@@ -3,13 +3,13 @@
 
 #include <nnsys.h>
 
-#include "overlay101/struct_ov101_021D148C.h"
-#include "overlay101/struct_ov101_021D1894.h"
-#include "overlay101/struct_ov101_021D2D88.h"
-#include "overlay101/struct_ov101_021D4714.h"
-#include "overlay101/struct_ov101_021D4764.h"
-#include "overlay101/struct_ov101_021D4F58.h"
-#include "overlay101/struct_ov101_021D7E48_decl.h"
+#include "slot_machine/struct_ov101_021D148C.h"
+#include "slot_machine/struct_ov101_021D1894.h"
+#include "slot_machine/struct_ov101_021D2D88.h"
+#include "slot_machine/struct_ov101_021D4714.h"
+#include "slot_machine/struct_ov101_021D4764.h"
+#include "slot_machine/struct_ov101_021D4F58.h"
+#include "slot_machine/struct_ov101_021D7E48_decl.h"
 
 #include "bg_window.h"
 #include "enums.h"

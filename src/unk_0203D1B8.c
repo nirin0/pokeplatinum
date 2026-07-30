@@ -68,7 +68,7 @@
 #include "overlay094/application.h"
 #include "overlay095/ov95_02246C20.h"
 #include "overlay099/ov99_021D0D80.h"
-#include "overlay101/ov101_021D0D80.h"
+#include "slot_machine/slot_machine_main.h"
 #include "overlay111/ov111_021D0D80.h"
 #include "savedata/save_table.h"
 #include "wifi_battle_tower/application.h"
@@ -162,7 +162,7 @@ FS_EXTERN_OVERLAY(overlay94);
 FS_EXTERN_OVERLAY(overlay95);
 FS_EXTERN_OVERLAY(wifi_battle_tower);
 FS_EXTERN_OVERLAY(overlay99);
-FS_EXTERN_OVERLAY(overlay101);
+FS_EXTERN_OVERLAY(slot_machine);
 FS_EXTERN_OVERLAY(frontier_records_app);
 FS_EXTERN_OVERLAY(overlay111);
 FS_EXTERN_OVERLAY(dw_warp);
@@ -1485,13 +1485,13 @@ void FieldSystem_HatchEgg(FieldSystem *fieldSystem)
 
 BOOL sub_0203E348(FieldSystem *fieldSystem, UnkStruct_0203E348 *param1)
 {
-    FS_EXTERN_OVERLAY(overlay101);
+    FS_EXTERN_OVERLAY(slot_machine);
 
     static const ApplicationManagerTemplate appTemplate = {
         ov101_021D0D80,
         ov101_021D0E40,
         ov101_021D0EE4,
-        FS_OVERLAY_ID(overlay101)
+        FS_OVERLAY_ID(slot_machine)
     };
 
     FieldSystem_StartChildProcess(fieldSystem, &appTemplate, param1);

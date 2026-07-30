@@ -1,9 +1,9 @@
-#include "overlay101/ov101_021D7E48.h"
+#include "slot_machine/slot_machine_sprites.h"
 
 #include <nitro.h>
 #include <string.h>
 
-#include "overlay101/struct_ov101_021D8544.h"
+#include "slot_machine/struct_ov101_021D8544.h"
 
 #include "cell_transfer.h"
 #include "heap.h"

@@ -1,7 +1,7 @@
 #ifndef POKEPLATINUM_STRUCT_OV101_021D2D88_H
 #define POKEPLATINUM_STRUCT_OV101_021D2D88_H
 
-#include "overlay101/struct_ov101_021D13C8_decl.h"
+#include "slot_machine/struct_ov101_021D13C8_decl.h"
 
 #include "enums.h"
 #include "sys_task_manager.h"

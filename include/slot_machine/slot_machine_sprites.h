@@ -1,10 +1,10 @@
-#ifndef POKEPLATINUM_OV101_021D7E48_H
-#define POKEPLATINUM_OV101_021D7E48_H
+#ifndef POKEPLATINUM_SLOT_MACHINE_SPRITES_H
+#define POKEPLATINUM_SLOT_MACHINE_SPRITES_H
 
 #include <nitro/fx/fx.h>
 
-#include "overlay101/struct_ov101_021D7E48_decl.h"
-#include "overlay101/struct_ov101_021D8544.h"
+#include "slot_machine/struct_ov101_021D7E48_decl.h"
+#include "slot_machine/struct_ov101_021D8544.h"
 
 #include "narc.h"
 #include "sprite.h"
@@ -26,4 +26,4 @@ void ov101_021D8544(UnkStruct_ov101_021D8544 *param0);
 void ov101_021D8560(Sprite *param0, VecFx32 *param1);
 void ov101_021D8574(Sprite *param0, VecFx32 *param1);
 
-#endif // POKEPLATINUM_OV101_021D7E48_H
+#endif // POKEPLATINUM_SLOT_MACHINE_SPRITES_H

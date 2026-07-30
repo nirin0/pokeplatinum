@@ -1,16 +1,16 @@
-#include "overlay101/ov101_021D59AC.h"
+#include "slot_machine/slot_machine_anim.h"
 
 #include <nitro.h>
 #include <string.h>
 
 #include "constants/species.h"
 
-#include "overlay101/ov101_021D1A28.h"
-#include "overlay101/ov101_021D7E48.h"
-#include "overlay101/struct_ov101_021D13C8.h"
-#include "overlay101/struct_ov101_021D4764.h"
-#include "overlay101/struct_ov101_021D8544.h"
-#include "overlay101/struct_ov101_021D93D4.h"
+#include "slot_machine/slot_machine_lib.h"
+#include "slot_machine/slot_machine_sprites.h"
+#include "slot_machine/struct_ov101_021D13C8.h"
+#include "slot_machine/struct_ov101_021D4764.h"
+#include "slot_machine/struct_ov101_021D8544.h"
+#include "slot_machine/struct_ov101_021D93D4.h"
 
 #include "enums.h"
 #include "math_util.h"

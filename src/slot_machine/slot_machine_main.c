@@ -1,4 +1,4 @@
-#include "overlay101/ov101_021D0D80.h"
+#include "slot_machine/slot_machine_main.h"
 
 #include <nitro.h>
 #include <string.h>
@@ -7,12 +7,12 @@
 
 #include "struct_defs/struct_0203E348.h"
 
-#include "overlay101/ov101_021D1A28.h"
-#include "overlay101/ov101_021D59AC.h"
-#include "overlay101/ov101_021D7E48.h"
-#include "overlay101/struct_ov101_021D13C8.h"
-#include "overlay101/struct_ov101_021D148C.h"
-#include "overlay101/struct_ov101_021D1894.h"
+#include "slot_machine/slot_machine_lib.h"
+#include "slot_machine/slot_machine_anim.h"
+#include "slot_machine/slot_machine_sprites.h"
+#include "slot_machine/struct_ov101_021D13C8.h"
+#include "slot_machine/struct_ov101_021D148C.h"
+#include "slot_machine/struct_ov101_021D1894.h"
 
 #include "bg_window.h"
 #include "char_transfer.h"

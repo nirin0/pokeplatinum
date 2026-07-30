@@ -1,7 +1,7 @@
 #ifndef POKEPLATINUM_CONST_OV101_021D9AE4_H
 #define POKEPLATINUM_CONST_OV101_021D9AE4_H
 
-#include "overlay101/struct_ov101_021D9AE4.h"
+#include "slot_machine/struct_ov101_021D9AE4.h"
 
 #include "enums.h"
 
