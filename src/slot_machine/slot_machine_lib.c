@@ -247,7 +247,7 @@ int ov101_021D1AAC(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1AD0(SlotMachineGameState *param0)
+static int GS00RoundInit(SlotMachineGameState *param0)
 {
     param0->unk_64 = 0;
     param0->unk_68 = 0;
@@ -276,7 +276,7 @@ static int ov101_021D1AD0(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D1B40(SlotMachineGameState *param0)
+static int GS01IdleButton(SlotMachineGameState *param0)
 {
     if (ov101_021D55F8(PAD_BUTTON_START) != 0) {
         ov101_021D5244(param0);
@@ -299,7 +299,7 @@ static int ov101_021D1B40(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1B9C(SlotMachineGameState *param0)
+static int GS02PaidButton(SlotMachineGameState *param0)
 {
     if (ov101_021D55F8(PAD_BUTTON_START) != 0) {
         param0->unk_60 += 3;
@@ -315,7 +315,7 @@ static int ov101_021D1B9C(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1BD0(SlotMachineGameState *param0)
+static int GS03RollReels(SlotMachineGameState *param0)
 {
     ov101_021D40A8(param0);
 
@@ -362,7 +362,7 @@ static int ov101_021D1BD0(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D1C9C(SlotMachineGameState *param0)
+static int GS04ReelStartedWait(SlotMachineGameState *param0)
 {
     param0->unk_6C += FX32_ONE;
 
@@ -375,7 +375,7 @@ static int ov101_021D1C9C(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1CBC(SlotMachineGameState *param0)
+static int GS05ReelButton(SlotMachineGameState *param0)
 {
     u32 v0 = gSystem.pressedKeys;
 
@@ -422,7 +422,7 @@ static int ov101_021D1CBC(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1DB4(SlotMachineGameState *param0)
+static int GS06WaitForFullStopIGuess(SlotMachineGameState *param0)
 {
     if ((ov101_021D2C04(param0, 0) == 1) || (ov101_021D2C04(param0, 1) == 1) || (ov101_021D2C04(param0, 2) == 1)) {
         return 0;
@@ -433,7 +433,7 @@ static int ov101_021D1DB4(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D1DEC(SlotMachineGameState *param0)
+static int GS07ResultCalc(SlotMachineGameState *param0)
 {
     UnkEnum_ov101_021D9688 v0 = ov101_021D5778(param0, param0->unk_74, &param0->unk_48);
 
@@ -473,7 +473,7 @@ static int ov101_021D1DEC(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D1E54(SlotMachineGameState *param0)
+static int GS08NoWinReset(SlotMachineGameState *param0)
 {
     ov101_021D4FF8(param0);
 
@@ -483,7 +483,7 @@ static int ov101_021D1E54(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D1E68(SlotMachineGameState *param0)
+static int GS09NowWinWait(SlotMachineGameState *param0)
 {
     param0->unk_6C += FX32_ONE;
 
@@ -495,7 +495,7 @@ static int ov101_021D1E68(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1E84(SlotMachineGameState *param0)
+static int GS10AlsoNoWinIGuess(SlotMachineGameState *param0)
 {
     ov101_021D4FF8(param0);
     ov101_021D4798(param0, 2);
@@ -504,7 +504,7 @@ static int ov101_021D1E84(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1E9C(SlotMachineGameState *param0)
+static int GS11AlsoNoWinIGuess2(SlotMachineGameState *param0)
 {
     if (ov101_021D47AC(param0) == 1) {
         ov101_021D4798(param0, 0);
@@ -515,7 +515,7 @@ static int ov101_021D1E9C(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1EBC(SlotMachineGameState *param0)
+static int GS12Payout(SlotMachineGameState *param0)
 {
     param0->unk_64 = ov101_021D597C(param0);
     param0->unk_458 += param0->unk_64;
@@ -528,7 +528,7 @@ static int ov101_021D1EBC(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1EEC(SlotMachineGameState *param0)
+static int GS13PayoutWait(SlotMachineGameState *param0)
 {
     param0->unk_6C += FX32_ONE;
 
@@ -546,7 +546,7 @@ static int ov101_021D1EEC(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1F34(SlotMachineGameState *param0)
+static int GS14Replay(SlotMachineGameState *param0)
 {
     param0->unk_64 = 0;
     param0->unk_6C = 0;
@@ -558,7 +558,7 @@ static int ov101_021D1F34(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1F54(SlotMachineGameState *param0)
+static int GS15ReplayWait(SlotMachineGameState *param0)
 {
     param0->unk_6C += FX32_ONE;
 
@@ -576,7 +576,7 @@ static int ov101_021D1F54(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1FA0(SlotMachineGameState *param0)
+static int GS16NoWinButSetLuckVarsThen17(SlotMachineGameState *param0)
 {
     ov101_021D4FF8(param0);
     ov101_021D4210(param0);
@@ -589,7 +589,7 @@ static int ov101_021D1FA0(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1FC8(SlotMachineGameState *param0)
+static int GS17Wait(SlotMachineGameState *param0)
 {
     param0->unk_6C += FX32_ONE;
 
@@ -602,7 +602,7 @@ static int ov101_021D1FC8(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D1FF4(SlotMachineGameState *param0)
+static int GS18To23(SlotMachineGameState *param0)
 {
     if (ov101_021D47AC(param0) == 1) {
         param0->unk_00 = 23;
@@ -612,7 +612,7 @@ static int ov101_021D1FF4(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D200C(SlotMachineGameState *param0)
+static int GS19PayoutAndSetLuckVars(SlotMachineGameState *param0)
 {
     param0->unk_64 = ov101_021D597C(param0);
     param0->unk_6C = 0;
@@ -626,7 +626,7 @@ static int ov101_021D200C(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D203C(SlotMachineGameState *param0)
+static int GS20WaitFor23(SlotMachineGameState *param0)
 {
     param0->unk_6C += FX32_ONE;
 
@@ -644,7 +644,7 @@ static int ov101_021D203C(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D2088(SlotMachineGameState *param0)
+static int GS21SetLuckVars(SlotMachineGameState *param0)
 {
     param0->unk_6C = 0;
     param0->unk_00 = 22;
@@ -657,7 +657,7 @@ static int ov101_021D2088(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D20B0(SlotMachineGameState *param0)
+static int GS22WaitFor24(SlotMachineGameState *param0)
 {
     param0->unk_6C += FX32_ONE;
 
@@ -675,14 +675,14 @@ static int ov101_021D20B0(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D20FC(SlotMachineGameState *param0)
+static int GS23To25(SlotMachineGameState *param0)
 {
     GF_ASSERT(param0->unk_50 < UnkEnum_ov101_021D9934_06);
     param0->unk_00 = 25;
     return 1;
 }
 
-static int ov101_021D2114(SlotMachineGameState *param0)
+static int GS24To28(SlotMachineGameState *param0)
 {
     GF_ASSERT(param0->unk_50 < UnkEnum_ov101_021D9934_06);
     param0->unk_00 = 28;
@@ -690,7 +690,7 @@ static int ov101_021D2114(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D212C(SlotMachineGameState *param0)
+static int GS25RoundInit2(SlotMachineGameState *param0)
 {
     param0->unk_64 = 0;
     param0->unk_68 = 0;
@@ -718,7 +718,7 @@ static int ov101_021D212C(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2198(SlotMachineGameState *param0)
+static int GS26IdleButton2(SlotMachineGameState *param0)
 {
     if (ov101_021D55F8(PAD_BUTTON_START) != 0) {
         param0->unk_00 = 63;
@@ -741,7 +741,7 @@ static int ov101_021D2198(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D21F4(SlotMachineGameState *param0)
+static int GS27PaidButton2(SlotMachineGameState *param0)
 {
     if (ov101_021D55F8(PAD_BUTTON_START) != 0) {
         param0->unk_60 += 3;
@@ -757,7 +757,7 @@ static int ov101_021D21F4(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D2228(SlotMachineGameState *param0)
+static int GS28RollReels2(SlotMachineGameState *param0)
 {
     ov101_021D4394(param0);
 
@@ -798,7 +798,7 @@ static int ov101_021D2228(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D22D0(SlotMachineGameState *param0)
+static int GS29Wait8(SlotMachineGameState *param0)
 {
     param0->unk_6C += FX32_ONE;
 
@@ -812,7 +812,7 @@ static int ov101_021D22D0(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D22F0(SlotMachineGameState *param0)
+static int GS30ReelButton2(SlotMachineGameState *param0)
 {
     u32 v0 = gSystem.pressedKeys;
 
@@ -859,7 +859,7 @@ static int ov101_021D22F0(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D23E8(SlotMachineGameState *param0)
+static int GS31WaitForFullStop(SlotMachineGameState *param0)
 {
     if ((ov101_021D2C04(param0, 0) == 1) || (ov101_021D2C04(param0, 1) == 1) || (ov101_021D2C04(param0, 2) == 1)) {
         return 0;
@@ -870,7 +870,7 @@ static int ov101_021D23E8(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2420(SlotMachineGameState *param0)
+static int GS32ResultCalc(SlotMachineGameState *param0)
 {
     UnkEnum_ov101_021D9688 v0 = ov101_021D5778(param0, param0->unk_74, &param0->unk_48);
 
@@ -895,7 +895,7 @@ static int ov101_021D2420(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2464(SlotMachineGameState *param0)
+static int GS33NoWin(SlotMachineGameState *param0)
 {
     ov101_021D4FF8(param0);
     ov101_021D4798(param0, 7);
@@ -906,7 +906,7 @@ static int ov101_021D2464(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2480(SlotMachineGameState *param0)
+static int GS34NoWinWaitFor25(SlotMachineGameState *param0)
 {
     param0->unk_6C += FX32_ONE;
 
@@ -920,7 +920,7 @@ static int ov101_021D2480(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D24A0(SlotMachineGameState *param0)
+static int GS35Payout(SlotMachineGameState *param0)
 {
     param0->unk_64 = ov101_021D597C(param0);
     param0->unk_458 += param0->unk_64;
@@ -933,7 +933,7 @@ static int ov101_021D24A0(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D24D0(SlotMachineGameState *param0)
+static int GS36PayoutWaitFor25(SlotMachineGameState *param0)
 {
     if (ov101_021D460C(param0) == 1) {
         ov101_021D4798(param0, 7);
@@ -944,7 +944,7 @@ static int ov101_021D24D0(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D24F0(SlotMachineGameState *param0)
+static int GS37Replay(SlotMachineGameState *param0)
 {
     param0->unk_64 = 0;
     param0->unk_6C = 0;
@@ -956,7 +956,7 @@ static int ov101_021D24F0(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D2510(SlotMachineGameState *param0)
+static int GS38ReplayWaitFor28(SlotMachineGameState *param0)
 {
     param0->unk_6C += FX32_ONE;
 
@@ -975,7 +975,7 @@ static int ov101_021D2510(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D254C(SlotMachineGameState *param0)
+static int GS39Payout(SlotMachineGameState *param0)
 {
     param0->unk_64 = ov101_021D597C(param0);
     param0->unk_458 += param0->unk_64;
@@ -992,7 +992,7 @@ static int ov101_021D254C(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D2598(SlotMachineGameState *param0)
+static int GS40WaitForAnim(SlotMachineGameState *param0)
 {
     if (ov101_021D460C(param0) == 1) {
         OverworldAnimManager_Finish(param0->unk_454);
@@ -1004,7 +1004,7 @@ static int ov101_021D2598(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D25C4(SlotMachineGameState *param0)
+static int GS41Init8x12x20(SlotMachineGameState *param0)
 {
     ov101_021D47B4(param0);
 
@@ -1016,7 +1016,7 @@ static int ov101_021D25C4(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D25DC(SlotMachineGameState *param0)
+static int GS42InitBonusRound(SlotMachineGameState *param0)
 {
     param0->unk_0C++;
     param0->unk_1C++;
@@ -1041,7 +1041,7 @@ static int ov101_021D25DC(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2628(SlotMachineGameState *param0)
+static int GS43BonusPreCheckCoinsEtc(SlotMachineGameState *param0)
 {
     param0->unk_10--;
     GF_ASSERT((int)param0->unk_10 >= 1);
@@ -1069,7 +1069,7 @@ static int ov101_021D2628(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D269C(SlotMachineGameState *param0)
+static int GS44BonusIdleButton(SlotMachineGameState *param0)
 {
     if (ov101_021D55F8(PAD_BUTTON_START) != 0) {
         param0->unk_00 = 63;
@@ -1097,7 +1097,7 @@ static int ov101_021D269C(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D2704(SlotMachineGameState *param0)
+static int GS45BonusPaidButton(SlotMachineGameState *param0)
 {
     if (ov101_021D55F8(PAD_BUTTON_START) != 0) {
         param0->unk_60 += 1;
@@ -1113,7 +1113,7 @@ static int ov101_021D2704(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D2738(SlotMachineGameState *param0)
+static int GS46BonusRollReels(SlotMachineGameState *param0)
 {
     param0->unk_460++;
     param0->unk_46C++;
@@ -1165,7 +1165,7 @@ static int ov101_021D2738(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2828(SlotMachineGameState *param0)
+static int GS47BonusWait(SlotMachineGameState *param0)
 {
     param0->unk_6C += FX32_ONE;
 
@@ -1179,7 +1179,7 @@ static int ov101_021D2828(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D2850(SlotMachineGameState *param0)
+static int GS48BonusReelButton(SlotMachineGameState *param0)
 {
     u32 v0 = gSystem.pressedKeys;
 
@@ -1228,7 +1228,7 @@ static int ov101_021D2850(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D2950(SlotMachineGameState *param0)
+static int GS49BonusWaitForFullStop(SlotMachineGameState *param0)
 {
     if ((ov101_021D2C04(param0, 0) == 1) || (ov101_021D2C04(param0, 1) == 1) || (ov101_021D2C04(param0, 2) == 1)) {
         return 0;
@@ -1239,7 +1239,7 @@ static int ov101_021D2950(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2988(SlotMachineGameState *param0)
+static int GS50BonusResultCalc(SlotMachineGameState *param0)
 {
     UnkEnum_ov101_021D9688 v0 = ov101_021D57EC(param0, param0->unk_74, &param0->unk_48);
 
@@ -1263,7 +1263,7 @@ static int ov101_021D2988(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D29C0(SlotMachineGameState *param0)
+static int GS51BonusLoseTo43or54(SlotMachineGameState *param0)
 {
     ov101_021D4FF8(param0);
     ov101_021D4798(param0, 7);
@@ -1277,7 +1277,7 @@ static int ov101_021D29C0(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D29E4(SlotMachineGameState *param0)
+static int GS52BonusWin(SlotMachineGameState *param0)
 {
     param0->unk_64 = Unk_ov101_021D94F0[param0->unk_44];
     param0->unk_458 += param0->unk_64;
@@ -1291,7 +1291,7 @@ static int ov101_021D29E4(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D2A18(SlotMachineGameState *param0)
+static int GS53BonusWinTo43or54(SlotMachineGameState *param0)
 {
     if (ov101_021D460C(param0) == 0) {
         return 0;
@@ -1308,7 +1308,7 @@ static int ov101_021D2A18(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2A44(SlotMachineGameState *param0)
+static int GS54BonusRoundEndTo55or58(SlotMachineGameState *param0)
 {
     param0->unk_10--;
     GF_ASSERT(param0->unk_10 == 0);
@@ -1323,7 +1323,7 @@ static int ov101_021D2A44(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2A78(SlotMachineGameState *param0)
+static int GS55AnotherBonusRoundMaybeAnimation(SlotMachineGameState *param0)
 {
     UnkEnum_ov101_021D4550 v0;
 
@@ -1351,7 +1351,7 @@ static int ov101_021D2A78(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D2AC8(SlotMachineGameState *param0)
+static int GS56AnimAnotherBonusRoundTo42(SlotMachineGameState *param0)
 {
     if (ov101_021D47AC(param0) == 0) {
         return 0;
@@ -1361,7 +1361,7 @@ static int ov101_021D2AC8(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2AE0(SlotMachineGameState *param0)
+static int GS57AnimAnotherBonusRoundTo42(SlotMachineGameState *param0)
 {
     if (ov101_021D47AC(param0) == 0) {
         return 0;
@@ -1371,7 +1371,7 @@ static int ov101_021D2AE0(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2AF8(SlotMachineGameState *param0)
+static int GS58EndClefairyTo0(SlotMachineGameState *param0)
 {
     if (ov101_021D47AC(param0) == 0) {
         return 0;
@@ -1388,28 +1388,28 @@ static int ov101_021D2AF8(SlotMachineGameState *param0)
     return 1;
 }
 
-static int ov101_021D2B28(SlotMachineGameState *param0)
+static int GS59LessThen3CoinsMessageTo62(SlotMachineGameState *param0)
 {
     ov101_021D148C(param0, 0);
     param0->unk_00 = 62;
     return 0;
 }
 
-static int ov101_021D2B3C(SlotMachineGameState *param0)
+static int GS60NoCoinsMessageTo62(SlotMachineGameState *param0)
 {
     ov101_021D148C(param0, 2);
     param0->unk_00 = 62;
     return 0;
 }
 
-static int ov101_021D2B50(SlotMachineGameState *param0)
+static int GS61FullCoinsMessageTo62(SlotMachineGameState *param0)
 {
     ov101_021D148C(param0, 1);
     param0->unk_00 = 62;
     return 0;
 }
 
-static int ov101_021D2B64(SlotMachineGameState *param0)
+static int GS62GoTo63OrAppropriateRoundInit(SlotMachineGameState *param0)
 {
     if (ov101_021D55F8(PAD_BUTTON_A | PAD_BUTTON_B)) {
         ov101_021D14E4(param0);
@@ -1419,77 +1419,77 @@ static int ov101_021D2B64(SlotMachineGameState *param0)
     return 0;
 }
 
-static int ov101_021D2B80(SlotMachineGameState *param0)
+static int GS63End(SlotMachineGameState *param0)
 {
     ov101_021D5244(param0);
     return 2;
 }
 
 static int (*const Unk_ov101_021D8838[64])(SlotMachineGameState *) = {
-    ov101_021D1AD0,
-    ov101_021D1B40,
-    ov101_021D1B9C,
-    ov101_021D1BD0,
-    ov101_021D1C9C,
-    ov101_021D1CBC,
-    ov101_021D1DB4,
-    ov101_021D1DEC,
-    ov101_021D1E54,
-    ov101_021D1E68,
-    ov101_021D1E84,
-    ov101_021D1E9C,
-    ov101_021D1EBC,
-    ov101_021D1EEC,
-    ov101_021D1F34,
-    ov101_021D1F54,
-    ov101_021D1FA0,
-    ov101_021D1FC8,
-    ov101_021D1FF4,
-    ov101_021D200C,
-    ov101_021D203C,
-    ov101_021D2088,
-    ov101_021D20B0,
-    ov101_021D20FC,
-    ov101_021D2114,
-    ov101_021D212C,
-    ov101_021D2198,
-    ov101_021D21F4,
-    ov101_021D2228,
-    ov101_021D22D0,
-    ov101_021D22F0,
-    ov101_021D23E8,
-    ov101_021D2420,
-    ov101_021D2464,
-    ov101_021D2480,
-    ov101_021D24A0,
-    ov101_021D24D0,
-    ov101_021D24F0,
-    ov101_021D2510,
-    ov101_021D254C,
-    ov101_021D2598,
-    ov101_021D25C4,
-    ov101_021D25DC,
-    ov101_021D2628,
-    ov101_021D269C,
-    ov101_021D2704,
-    ov101_021D2738,
-    ov101_021D2828,
-    ov101_021D2850,
-    ov101_021D2950,
-    ov101_021D2988,
-    ov101_021D29C0,
-    ov101_021D29E4,
-    ov101_021D2A18,
-    ov101_021D2A44,
-    ov101_021D2A78,
-    ov101_021D2AC8,
-    ov101_021D2AE0,
-    ov101_021D2AF8,
-    ov101_021D2B28,
-    ov101_021D2B3C,
-    ov101_021D2B50,
-    ov101_021D2B64,
-    ov101_021D2B80
+    GS00RoundInit,
+    GS01IdleButton,
+    GS02PaidButton,
+    GS03RollReels,
+    GS04ReelStartedWait,
+    GS05ReelButton,
+    GS06WaitForFullStopIGuess,
+    GS07ResultCalc,
+    GS08NoWinReset,
+    GS09NowWinWait,
+    GS10AlsoNoWinIGuess,
+    GS11AlsoNoWinIGuess2,
+    GS12Payout,
+    GS13PayoutWait,
+    GS14Replay,
+    GS15ReplayWait,
+    GS16NoWinButSetLuckVarsThen17,
+    GS17Wait,
+    GS18To23,
+    GS19PayoutAndSetLuckVars,
+    GS20WaitFor23,
+    GS21SetLuckVars,
+    GS22WaitFor24,
+    GS23To25,
+    GS24To28,
+    GS25RoundInit2,
+    GS26IdleButton2,
+    GS27PaidButton2,
+    GS28RollReels2,
+    GS29Wait8,
+    GS30ReelButton2,
+    GS31WaitForFullStop,
+    GS32ResultCalc,
+    GS33NoWin,
+    GS34NoWinWaitFor25,
+    GS35Payout,
+    GS36PayoutWaitFor25,
+    GS37Replay,
+    GS38ReplayWaitFor28,
+    GS39Payout,
+    GS40WaitForAnim,
+    GS41Init8x12x20,
+    GS42InitBonusRound,
+    GS43BonusPreCheckCoinsEtc,
+    GS44BonusIdleButton,
+    GS45BonusPaidButton,
+    GS46BonusRollReels,
+    GS47BonusWait,
+    GS48BonusReelButton,
+    GS49BonusWaitForFullStop,
+    GS50BonusResultCalc,
+    GS51BonusLoseTo43or54,
+    GS52BonusWin,
+    GS53BonusWinTo43or54,
+    GS54BonusRoundEndTo55or58,
+    GS55AnotherBonusRoundMaybeAnimation,
+    GS56AnimAnotherBonusRoundTo42,
+    GS57AnimAnotherBonusRoundTo42,
+    GS58EndClefairyTo0,
+    GS59LessThen3CoinsMessageTo62,
+    GS60NoCoinsMessageTo62,
+    GS61FullCoinsMessageTo62,
+    GS62GoTo63OrAppropriateRoundInit,
+    GS63End
 };
 
 static void ov101_021D2B8C(SlotMachineGameState *param0)
