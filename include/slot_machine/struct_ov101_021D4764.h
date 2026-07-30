@@ -1,7 +1,7 @@
 #ifndef POKEPLATINUM_STRUCT_OV101_021D4764_H
 #define POKEPLATINUM_STRUCT_OV101_021D4764_H
 
-#include "slot_machine/struct_ov101_021D13C8_decl.h"
+#include "slot_machine/slot_machine_game_state_decl.h"
 
 #include "enums.h"
 #include "overworld_anim_manager.h"
@@ -16,7 +16,7 @@ typedef struct {
     int unk_14;
     UnkEnum_ov101_021D5814 unk_18;
     UnkEnum_ov101_021D6764 unk_1C;
-    UnkStruct_ov101_021D13C8 *unk_20;
+    SlotMachineGameState *unk_20;
     SysTask *unk_24;
     OverworldAnimManager *unk_28;
     OverworldAnimManager *unk_2C;

@@ -7,7 +7,7 @@
 
 #include "slot_machine/slot_machine_lib.h"
 #include "slot_machine/slot_machine_sprites.h"
-#include "slot_machine/struct_ov101_021D13C8.h"
+#include "slot_machine/slot_machine_game_state.h"
 #include "slot_machine/struct_ov101_021D4764.h"
 #include "slot_machine/struct_ov101_021D8544.h"
 #include "slot_machine/struct_ov101_021D93D4.h"
@@ -31,12 +31,12 @@ typedef struct {
     u32 unk_2C;
     u32 unk_30;
     int unk_34;
-    UnkStruct_ov101_021D13C8 *unk_38;
+    SlotMachineGameState *unk_38;
     UnkStruct_ov101_021D8544 unk_3C;
 } UnkStruct_ov101_021D630C;
 
 typedef struct {
-    UnkStruct_ov101_021D13C8 *unk_00;
+    SlotMachineGameState *unk_00;
     fx32 unk_04;
     UnkEnum_ov101_021D2BDC unk_08;
 } UnkStruct_ov101_021D5A0C;
@@ -47,14 +47,14 @@ typedef struct {
 } UnkStruct_ov101_021D5A64;
 
 typedef struct {
-    UnkStruct_ov101_021D13C8 *unk_00;
+    SlotMachineGameState *unk_00;
     u32 unk_04;
     u32 unk_08;
     UnkStruct_ov101_021D8544 unk_0C;
 } UnkStruct_ov101_021D5B9C;
 
 typedef struct {
-    UnkStruct_ov101_021D13C8 *unk_00;
+    SlotMachineGameState *unk_00;
     u32 unk_04;
     u32 unk_08;
     UnkStruct_ov101_021D8544 unk_0C;
@@ -65,7 +65,7 @@ typedef struct {
     u32 unk_04;
     u32 unk_08;
     vu32 unk_0C;
-    UnkStruct_ov101_021D13C8 *unk_10;
+    SlotMachineGameState *unk_10;
     UnkStruct_ov101_021D8544 unk_14;
 } UnkStruct_ov101_021D65F4;
 
@@ -78,7 +78,7 @@ typedef struct {
     int unk_14;
     UnkEnum_ov101_021D6764 unk_18;
     void *unk_1C;
-    UnkStruct_ov101_021D13C8 *unk_20;
+    SlotMachineGameState *unk_20;
     UnkStruct_ov101_021D8544 unk_24;
 } UnkStruct_ov101_021D66D0;
 
@@ -90,40 +90,40 @@ typedef struct {
     vu32 unk_10;
     VecFx32 unk_14;
     VecFx32 unk_20;
-    UnkStruct_ov101_021D13C8 *unk_2C;
+    SlotMachineGameState *unk_2C;
     UnkStruct_ov101_021D8544 unk_30;
     UnkStruct_ov101_021D8544 unk_3C;
 } UnkStruct_ov101_021D6D10;
 
 typedef struct {
-    UnkStruct_ov101_021D13C8 *unk_00;
+    SlotMachineGameState *unk_00;
     UnkStruct_ov101_021D8544 unk_04;
 } UnkStruct_ov101_021D72AC;
 
 typedef struct {
     int unk_00;
-    UnkStruct_ov101_021D13C8 *unk_04;
+    SlotMachineGameState *unk_04;
     UnkStruct_ov101_021D8544 unk_08;
 } UnkStruct_ov101_021D7394;
 
 typedef struct {
-    UnkStruct_ov101_021D13C8 *unk_00;
+    SlotMachineGameState *unk_00;
     UnkStruct_ov101_021D8544 unk_04;
 } UnkStruct_ov101_021D7438;
 
 typedef struct {
     int unk_00;
-    UnkStruct_ov101_021D13C8 *unk_04;
+    SlotMachineGameState *unk_04;
     UnkStruct_ov101_021D8544 unk_08;
 } UnkStruct_ov101_021D7530;
 
 typedef struct {
-    UnkStruct_ov101_021D13C8 *unk_00;
+    SlotMachineGameState *unk_00;
     UnkStruct_ov101_021D8544 unk_04[2];
 } UnkStruct_ov101_021D75F0;
 
 typedef struct {
-    UnkStruct_ov101_021D13C8 *unk_00;
+    SlotMachineGameState *unk_00;
     UnkStruct_ov101_021D8544 unk_04[5];
 } UnkStruct_ov101_021D7754;
 
@@ -133,14 +133,14 @@ typedef struct {
     u32 unk_08;
     int unk_0C;
     int unk_10;
-    UnkStruct_ov101_021D13C8 *unk_14;
+    SlotMachineGameState *unk_14;
     UnkStruct_ov101_021D8544 unk_18[5];
 } UnkStruct_ov101_021D7984;
 
 typedef struct {
     int unk_00;
     int unk_04;
-    UnkStruct_ov101_021D13C8 *unk_08;
+    SlotMachineGameState *unk_08;
     UnkStruct_ov101_021D8544 unk_0C[3];
 } UnkStruct_ov101_021D7A00;
 
@@ -154,14 +154,14 @@ typedef struct {
     UnkEnum_ov101_021D9688 unk_18;
     UnkEnum_ov101_021D4F58 unk_1C;
     UnkStruct_ov101_021D8544 unk_20[3];
-    UnkStruct_ov101_021D13C8 *unk_44;
+    SlotMachineGameState *unk_44;
 } UnkStruct_ov101_021D7D94;
 
 static void ov101_021D630C(UnkStruct_ov101_021D630C *param0, UnkEnum_ov101_021D5814 param1);
-static void ov101_021D63A4(UnkStruct_ov101_021D13C8 *param0);
+static void ov101_021D63A4(SlotMachineGameState *param0);
 static void ov101_021D63BC(SysTask *param0, void *param1);
 static void ov101_021D63E8(SysTask *param0, void *param1);
-static void ov101_021D6410(UnkStruct_ov101_021D13C8 *param0, UnkStruct_ov101_021D8544 *param1, const VecFx32 *param2);
+static void ov101_021D6410(SlotMachineGameState *param0, UnkStruct_ov101_021D8544 *param1, const VecFx32 *param2);
 static void ov101_021D65F4(UnkStruct_ov101_021D65F4 *param0);
 static void ov101_021D7D94(UnkStruct_ov101_021D7D94 *param0);
 
@@ -173,7 +173,7 @@ static const fx32 Unk_ov101_021D9354[10];
 static const UnkStruct_ov101_021D93D4 Unk_ov101_021D93D4[UnkEnum_ov101_021D5814_05];
 static const UnkStruct_ov101_021D93D4 Unk_ov101_021D93A4[UnkEnum_ov101_021D6764_03];
 
-void ov101_021D59AC(UnkStruct_ov101_021D13C8 *param0)
+void ov101_021D59AC(SlotMachineGameState *param0)
 {
     UnkEnum_ov101_021D2BDC v0;
     fx32 v1, v2;
@@ -252,7 +252,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D91DC = {
     ov101_021D5AEC
 };
 
-void ov101_021D5AF0(UnkStruct_ov101_021D13C8 *param0)
+void ov101_021D5AF0(SlotMachineGameState *param0)
 {
     u32 v0;
     VecFx32 v1 = { (FX32_ONE * 108), (FX32_ONE * 180), 0 };
@@ -269,7 +269,7 @@ static int ov101_021D5B44(OverworldAnimManager *param0, void *param1)
 
     v1->unk_04 = OverworldAnimManager_GetUserInt(param0);
     v1->unk_08 = v1->unk_04 * 10;
-    v1->unk_00 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v1->unk_00 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
 
     OverworldAnimManager_GetPosition(param0, &v0);
     ov101_021D84A4(v1->unk_00->unk_450, &v1->unk_0C, &v0, (NNS_G2D_VRAM_TYPE_2DMAIN), 0, 1, 1, 1, 1, 1, 1);
@@ -325,7 +325,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D91F0 = {
 
 static const OverworldAnimManagerFuncs Unk_ov101_021D9204;
 
-void ov101_021D5C28(UnkStruct_ov101_021D13C8 *param0)
+void ov101_021D5C28(SlotMachineGameState *param0)
 {
     u32 v0;
     VecFx32 v1 = { (FX32_ONE * 180), (FX32_ONE * 180), 0 };
@@ -342,7 +342,7 @@ static int ov101_021D5C7C(OverworldAnimManager *param0, void *param1)
 
     v1->unk_04 = OverworldAnimManager_GetUserInt(param0);
     v1->unk_08 = v1->unk_04 * 10;
-    v1->unk_00 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v1->unk_00 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
 
     OverworldAnimManager_GetPosition(param0, &v0);
     ov101_021D84A4(v1->unk_00->unk_450, &v1->unk_0C, &v0, (NNS_G2D_VRAM_TYPE_2DMAIN), 0, 1, 1, 1, 1, 1, 1);
@@ -399,7 +399,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D9204 = {
 static const OverworldAnimManagerFuncs Unk_ov101_021D9218;
 static int (*const *const Unk_ov101_021D9294[UnkEnum_ov101_021D5D90_07])(UnkStruct_ov101_021D630C *);
 
-OverworldAnimManager *ov101_021D5D58(UnkStruct_ov101_021D13C8 *param0, UnkEnum_ov101_021D5814 param1)
+OverworldAnimManager *ov101_021D5D58(SlotMachineGameState *param0, UnkEnum_ov101_021D5814 param1)
 {
     OverworldAnimManager *v0;
     VecFx32 v1 = { (FX32_ONE * 0), (FX32_ONE * 400), 0 };
@@ -439,7 +439,7 @@ static int ov101_021D5DD0(OverworldAnimManager *param0, void *param1)
 {
     UnkStruct_ov101_021D630C *v0 = param1;
 
-    v0->unk_38 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v0->unk_38 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
     v0->unk_10 = OverworldAnimManager_GetUserInt(param0);
 
     return 1;
@@ -787,7 +787,7 @@ static int (*const *const Unk_ov101_021D9294[UnkEnum_ov101_021D5D90_07])(UnkStru
 static void ov101_021D630C(UnkStruct_ov101_021D630C *param0, UnkEnum_ov101_021D5814 param1)
 {
     SysTask *v0;
-    UnkStruct_ov101_021D13C8 *v1 = param0->unk_38;
+    SlotMachineGameState *v1 = param0->unk_38;
     const UnkStruct_ov101_021D93D4 *v2;
 
     GF_ASSERT(param1 < UnkEnum_ov101_021D5814_05);
@@ -805,7 +805,7 @@ static void ov101_021D630C(UnkStruct_ov101_021D630C *param0, UnkEnum_ov101_021D5
     GF_ASSERT(v0 != NULL);
 }
 
-static void ov101_021D63A4(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D63A4(SlotMachineGameState *param0)
 {
     ov101_021D8358(param0->unk_450, 2, 2, 2, 2);
 }
@@ -813,7 +813,7 @@ static void ov101_021D63A4(UnkStruct_ov101_021D13C8 *param0)
 static void ov101_021D63BC(SysTask *param0, void *param1)
 {
     UnkStruct_ov101_021D630C *v0 = param1;
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_38;
+    SlotMachineGameState *v1 = v0->unk_38;
 
     ov101_021D814C(v1->unk_450, 2);
     ov101_021D8220(v1->unk_450, 2);
@@ -826,7 +826,7 @@ static void ov101_021D63BC(SysTask *param0, void *param1)
 static void ov101_021D63E8(SysTask *param0, void *param1)
 {
     UnkStruct_ov101_021D630C *v0 = param1;
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_38;
+    SlotMachineGameState *v1 = v0->unk_38;
 
     if (v0->unk_0C == 1) {
         ov101_021D8254(v1->unk_450, 2);
@@ -835,7 +835,7 @@ static void ov101_021D63E8(SysTask *param0, void *param1)
     }
 }
 
-static void ov101_021D6410(UnkStruct_ov101_021D13C8 *param0, UnkStruct_ov101_021D8544 *param1, const VecFx32 *param2)
+static void ov101_021D6410(SlotMachineGameState *param0, UnkStruct_ov101_021D8544 *param1, const VecFx32 *param2)
 {
     VecFx32 v0 = { 0, 0, 0 };
     VecFx32 v1 = { 0x1000, 0x1000, 0 };
@@ -851,7 +851,7 @@ static void ov101_021D6410(UnkStruct_ov101_021D13C8 *param0, UnkStruct_ov101_021
 
 static const OverworldAnimManagerFuncs Unk_ov101_021D9150;
 
-OverworldAnimManager *ov101_021D6484(UnkStruct_ov101_021D13C8 *param0)
+OverworldAnimManager *ov101_021D6484(SlotMachineGameState *param0)
 {
     OverworldAnimManager *v0;
     VecFx32 v1 = { (FX32_ONE * 128), ((FX32_ONE * 192) + (FX32_ONE * (160 - 16))), 0 };
@@ -864,7 +864,7 @@ static int ov101_021D64BC(OverworldAnimManager *param0, void *param1)
 {
     UnkStruct_ov101_021D65F4 *v0 = param1;
 
-    v0->unk_10 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v0->unk_10 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
     ov101_021D65F4(v0);
 
     return 1;
@@ -934,7 +934,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D9150 = {
 static void ov101_021D65A0(SysTask *param0, void *param1)
 {
     UnkStruct_ov101_021D65F4 *v0 = param1;
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_10;
+    SlotMachineGameState *v1 = v0->unk_10;
 
     ov101_021D814C(v1->unk_450, 3);
     ov101_021D8220(v1->unk_450, 3);
@@ -947,7 +947,7 @@ static void ov101_021D65A0(SysTask *param0, void *param1)
 static void ov101_021D65CC(SysTask *param0, void *param1)
 {
     UnkStruct_ov101_021D65F4 *v0 = param1;
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_10;
+    SlotMachineGameState *v1 = v0->unk_10;
 
     if (v0->unk_0C == 1) {
         ov101_021D8254(v1->unk_450, 3);
@@ -959,7 +959,7 @@ static void ov101_021D65CC(SysTask *param0, void *param1)
 static void ov101_021D65F4(UnkStruct_ov101_021D65F4 *param0)
 {
     SysTask *v0;
-    UnkStruct_ov101_021D13C8 *v1 = param0->unk_10;
+    SlotMachineGameState *v1 = param0->unk_10;
 
     ov101_021D80E4(v1->unk_450, (NNS_G2D_VRAM_TYPE_2DSUB), v1->unk_438, 44, 3);
     ov101_021D81B4(v1->unk_450, (NNS_G2D_VRAM_TYPE_2DSUB), v1->unk_438, 47, 3);
@@ -979,7 +979,7 @@ static int (*const *const Unk_ov101_021D9330[UnkEnum_ov101_021D679C_09])(UnkStru
 static void ov101_021D667C(SysTask *param0, void *param1)
 {
     UnkStruct_ov101_021D66D0 *v0 = param1;
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_20;
+    SlotMachineGameState *v1 = v0->unk_20;
 
     ov101_021D814C(v1->unk_450, 4);
     ov101_021D8220(v1->unk_450, 4);
@@ -991,7 +991,7 @@ static void ov101_021D667C(SysTask *param0, void *param1)
 static void ov101_021D66A8(SysTask *param0, void *param1)
 {
     UnkStruct_ov101_021D66D0 *v0 = param1;
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_20;
+    SlotMachineGameState *v1 = v0->unk_20;
 
     if (v0->unk_10 == 1) {
         ov101_021D8254(v1->unk_450, 4);
@@ -1004,7 +1004,7 @@ static void ov101_021D66A8(SysTask *param0, void *param1)
 static void ov101_021D66D0(UnkStruct_ov101_021D66D0 *param0)
 {
     SysTask *v0;
-    UnkStruct_ov101_021D13C8 *v1 = param0->unk_20;
+    SlotMachineGameState *v1 = param0->unk_20;
     const UnkStruct_ov101_021D93D4 *v2 = &Unk_ov101_021D93A4[param0->unk_18];
 
     ov101_021D80E4(v1->unk_450, (NNS_G2D_VRAM_TYPE_2DSUB), v1->unk_438, v2->unk_00, 4);
@@ -1019,7 +1019,7 @@ static void ov101_021D66D0(UnkStruct_ov101_021D66D0 *param0)
     GF_ASSERT(v0 != NULL);
 }
 
-OverworldAnimManager *ov101_021D6764(UnkStruct_ov101_021D13C8 *param0, UnkEnum_ov101_021D6764 param1)
+OverworldAnimManager *ov101_021D6764(SlotMachineGameState *param0, UnkEnum_ov101_021D6764 param1)
 {
     OverworldAnimManager *v0;
     VecFx32 v1 = { (FX32_ONE * 128), (FX32_ONE * 160), 0 };
@@ -1049,7 +1049,7 @@ static int ov101_021D67BC(OverworldAnimManager *param0, void *param1)
 {
     UnkStruct_ov101_021D66D0 *v0 = param1;
 
-    v0->unk_20 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v0->unk_20 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
     v0->unk_18 = OverworldAnimManager_GetUserInt(param0);
 
     ov101_021D66D0(v0);
@@ -1062,7 +1062,7 @@ static void ov101_021D67DC(OverworldAnimManager *param0, void *param1)
     UnkStruct_ov101_021D66D0 *v0 = param1;
 
     if (v0->unk_24.unk_04 != NULL) {
-        UnkStruct_ov101_021D13C8 *v1 = v0->unk_20;
+        SlotMachineGameState *v1 = v0->unk_20;
 
         ov101_021D8358(v1->unk_450, 4, 4, 4, 4);
         ov101_021D8544(&v0->unk_24);
@@ -1393,7 +1393,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D9178;
 static void ov101_021D6D10(SysTask *param0, void *param1)
 {
     UnkStruct_ov101_021D6D10 *v0 = param1;
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_2C;
+    SlotMachineGameState *v1 = v0->unk_2C;
 
     ov101_021D814C(v1->unk_450, 5);
     ov101_021D8220(v1->unk_450, 5);
@@ -1406,7 +1406,7 @@ static void ov101_021D6D10(SysTask *param0, void *param1)
 static void ov101_021D6D3C(SysTask *param0, void *param1)
 {
     UnkStruct_ov101_021D6D10 *v0 = param1;
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_2C;
+    SlotMachineGameState *v1 = v0->unk_2C;
 
     if (v0->unk_10 = 1) {
         ov101_021D8254(v1->unk_450, 5);
@@ -1418,7 +1418,7 @@ static void ov101_021D6D3C(SysTask *param0, void *param1)
 static void ov101_021D6D68(UnkStruct_ov101_021D6D10 *param0)
 {
     SysTask *v0;
-    UnkStruct_ov101_021D13C8 *v1 = param0->unk_2C;
+    SlotMachineGameState *v1 = param0->unk_2C;
 
     ov101_021D80E4(v1->unk_450, (NNS_G2D_VRAM_TYPE_2DSUB), v1->unk_438, 56, 5);
     ov101_021D81B4(v1->unk_450, (NNS_G2D_VRAM_TYPE_2DSUB), v1->unk_438, 59, 5);
@@ -1431,7 +1431,7 @@ static void ov101_021D6D68(UnkStruct_ov101_021D6D10 *param0)
     GF_ASSERT(v0 != NULL);
 }
 
-OverworldAnimManager *ov101_021D6DF0(UnkStruct_ov101_021D13C8 *param0)
+OverworldAnimManager *ov101_021D6DF0(SlotMachineGameState *param0)
 {
     OverworldAnimManager *v0;
     VecFx32 v1 = { 0, 0, 0 };
@@ -1451,7 +1451,7 @@ static int ov101_021D6E28(OverworldAnimManager *param0, void *param1)
 {
     UnkStruct_ov101_021D6D10 *v0 = param1;
 
-    v0->unk_2C = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v0->unk_2C = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
     ov101_021D6D68(v0);
     return 1;
 }
@@ -1670,7 +1670,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D9178 = {
 
 static const OverworldAnimManagerFuncs Unk_ov101_021D918C;
 
-OverworldAnimManager *ov101_021D7228(UnkStruct_ov101_021D13C8 *param0)
+OverworldAnimManager *ov101_021D7228(SlotMachineGameState *param0)
 {
     OverworldAnimManager *v0;
     VecFx32 v1 = { (FX32_ONE * 24), ((FX32_ONE * 192) + (FX32_ONE * 8)), 0 };
@@ -1684,7 +1684,7 @@ static int ov101_021D7260(OverworldAnimManager *param0, void *param1)
     VecFx32 v0;
     UnkStruct_ov101_021D72AC *v1 = param1;
 
-    v1->unk_00 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v1->unk_00 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
 
     OverworldAnimManager_GetPosition(param0, &v0);
     ov101_021D84A4(v1->unk_00->unk_450, &v1->unk_04, &v0, (NNS_G2D_VRAM_TYPE_2DSUB), 0, 6, 6, 6, 6, 2, 3);
@@ -1722,7 +1722,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D918C = {
 
 static const OverworldAnimManagerFuncs Unk_ov101_021D91C8;
 
-OverworldAnimManager *ov101_021D72D4(UnkStruct_ov101_021D13C8 *param0)
+OverworldAnimManager *ov101_021D72D4(SlotMachineGameState *param0)
 {
     VecFx32 v0;
     OverworldAnimManager *v1;
@@ -1741,7 +1741,7 @@ static int ov101_021D7304(OverworldAnimManager *param0, void *param1)
     VecFx32 v2 = { 0x2000, 0x2000, 0 };
     UnkStruct_ov101_021D7394 *v3 = param1;
 
-    v3->unk_04 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v3->unk_04 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
 
     OverworldAnimManager_GetPosition(param0, &v0);
     ov101_021D84A4(v3->unk_04->unk_450, &v3->unk_08, &v0, (NNS_G2D_VRAM_TYPE_2DSUB), 0, 6, 6, 6, 6, 2, 3);
@@ -1783,7 +1783,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D91C8 = {
 
 static const OverworldAnimManagerFuncs Unk_ov101_021D922C;
 
-OverworldAnimManager *ov101_021D73B4(UnkStruct_ov101_021D13C8 *param0)
+OverworldAnimManager *ov101_021D73B4(SlotMachineGameState *param0)
 {
     OverworldAnimManager *v0;
     VecFx32 v1 = { (FX32_ONE * 200), ((FX32_ONE * 192) + (FX32_ONE * 184)), 0 };
@@ -1797,7 +1797,7 @@ static int ov101_021D73EC(OverworldAnimManager *param0, void *param1)
     VecFx32 v0;
     UnkStruct_ov101_021D72AC *v1 = param1;
 
-    v1->unk_00 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v1->unk_00 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
 
     OverworldAnimManager_GetPosition(param0, &v0);
     ov101_021D84A4(v1->unk_00->unk_450, &v1->unk_04, &v0, (NNS_G2D_VRAM_TYPE_2DSUB), 0, 7, 6, 7, 7, 2, 3);
@@ -1835,7 +1835,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D922C = {
 
 static const OverworldAnimManagerFuncs Unk_ov101_021D9254;
 
-OverworldAnimManager *ov101_021D7460(UnkStruct_ov101_021D13C8 *param0)
+OverworldAnimManager *ov101_021D7460(SlotMachineGameState *param0)
 {
     OverworldAnimManager *v0;
     VecFx32 v1 = { (FX32_ONE * 200), ((FX32_ONE * 192) + (FX32_ONE * 184)), 0 };
@@ -1854,7 +1854,7 @@ static int ov101_021D74A0(OverworldAnimManager *param0, void *param1)
     VecFx32 v2 = { 0x2000, 0x2000, 0 };
     UnkStruct_ov101_021D7530 *v3 = param1;
 
-    v3->unk_04 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v3->unk_04 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
 
     OverworldAnimManager_GetPosition(param0, &v0);
     ov101_021D84A4(v3->unk_04->unk_450, &v3->unk_08, &v0, (NNS_G2D_VRAM_TYPE_2DSUB), 0, 7, 6, 7, 7, 2, 3);
@@ -1896,7 +1896,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D9254 = {
 
 static const OverworldAnimManagerFuncs Unk_ov101_021D913C;
 
-OverworldAnimManager *ov101_021D7550(UnkStruct_ov101_021D13C8 *param0)
+OverworldAnimManager *ov101_021D7550(SlotMachineGameState *param0)
 {
     OverworldAnimManager *v0;
     VecFx32 v1 = { (FX32_ONE * 14), ((FX32_ONE * 192) + (FX32_ONE * 8)), 0 };
@@ -1911,7 +1911,7 @@ static int ov101_021D7588(OverworldAnimManager *param0, void *param1)
     VecFx32 v1;
     UnkStruct_ov101_021D75F0 *v2 = param1;
 
-    v2->unk_00 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v2->unk_00 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
     OverworldAnimManager_GetPosition(param0, &v1);
 
     for (v0 = 0; v0 < 2; v0++) {
@@ -1983,7 +1983,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D913C = {
 
 static const OverworldAnimManagerFuncs Unk_ov101_021D91A0;
 
-OverworldAnimManager *ov101_021D76B4(UnkStruct_ov101_021D13C8 *param0)
+OverworldAnimManager *ov101_021D76B4(SlotMachineGameState *param0)
 {
     OverworldAnimManager *v0;
     VecFx32 v1 = { (FX32_ONE * 14), ((FX32_ONE * 192) + (FX32_ONE * 8)), 0 };
@@ -1998,7 +1998,7 @@ static int ov101_021D76EC(OverworldAnimManager *param0, void *param1)
     VecFx32 v1 = { (FX32_ONE * 220), ((FX32_ONE * 192) + (FX32_ONE * 184)), 0 };
     UnkStruct_ov101_021D7754 *v2 = param1;
 
-    v2->unk_00 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v2->unk_00 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
 
     for (v0 = 0; v0 < 5; v0++, v1.x += (FX32_ONE * 8)) {
         ov101_021D84A4(v2->unk_00->unk_450, &v2->unk_04[v0], &v1, (NNS_G2D_VRAM_TYPE_2DSUB), 0, 8, 6, 8, 8, 2, 3);
@@ -2067,7 +2067,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D91A0 = {
 
 static const OverworldAnimManagerFuncs Unk_ov101_021D9240;
 
-OverworldAnimManager *ov101_021D77E4(UnkStruct_ov101_021D13C8 *param0, UnkEnum_ov101_021D77E4 param1)
+OverworldAnimManager *ov101_021D77E4(SlotMachineGameState *param0, UnkEnum_ov101_021D77E4 param1)
 {
     OverworldAnimManager *v0;
     VecFx32 v1 = { 0, 0, 0 };
@@ -2085,7 +2085,7 @@ static int ov101_021D7810(OverworldAnimManager *param0, void *param1)
     VecFx32 v4 = { 0, 0, 0 };
     VecFx32 v5 = { 0x2000, 0x2000, 0 };
     UnkStruct_ov101_021D7984 *v6 = param1;
-    UnkStruct_ov101_021D13C8 *v7 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    SlotMachineGameState *v7 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
 
     v6->unk_00 = OverworldAnimManager_GetUserInt(param0);
     v6->unk_14 = v7;
@@ -2180,7 +2180,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D9240 = {
 
 static const OverworldAnimManagerFuncs Unk_ov101_021D9268;
 
-OverworldAnimManager *ov101_021D79BC(UnkStruct_ov101_021D13C8 *param0, u32 param1)
+OverworldAnimManager *ov101_021D79BC(SlotMachineGameState *param0, u32 param1)
 {
     OverworldAnimManager *v0;
     VecFx32 v1 = { (FX32_ONE * 128), ((FX32_ONE * 192) + (FX32_ONE * 32)), 0 };
@@ -2200,7 +2200,7 @@ static int ov101_021D7A00(OverworldAnimManager *param0, void *param1)
     VecFx32 v4;
     UnkStruct_ov101_021D7A00 *v5 = param1;
 
-    v5->unk_08 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v5->unk_08 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
     v1 = OverworldAnimManager_GetUserInt(param0);
 
     OverworldAnimManager_GetPosition(param0, &v4);
@@ -2260,7 +2260,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D9268 = {
 
 static const OverworldAnimManagerFuncs Unk_ov101_021D91B4;
 
-OverworldAnimManager *ov101_021D7B08(UnkStruct_ov101_021D13C8 *param0)
+OverworldAnimManager *ov101_021D7B08(SlotMachineGameState *param0)
 {
     VecFx32 v0 = { 0, 0, 0 };
     OverworldAnimManager *v1 = OverworldAnimManagerList_InitManager(param0->unk_44C, &Unk_ov101_021D91B4, &v0, 0, param0, 140);
@@ -2301,7 +2301,7 @@ static int ov101_021D7B34(OverworldAnimManager *param0, void *param1)
     u32 v0;
     UnkStruct_ov101_021D7D94 *v1 = param1;
 
-    v1->unk_44 = (UnkStruct_ov101_021D13C8 *)OverworldAnimManager_GetUserData(param0);
+    v1->unk_44 = (SlotMachineGameState *)OverworldAnimManager_GetUserData(param0);
     v1->unk_18 = v1->unk_44->unk_44;
 
     v0 = v1->unk_44->unk_48;
@@ -2438,7 +2438,7 @@ static const OverworldAnimManagerFuncs Unk_ov101_021D91B4 = {
 static void ov101_021D7D4C(SysTask *param0, void *param1)
 {
     UnkStruct_ov101_021D7D94 *v0 = param1;
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_44;
+    SlotMachineGameState *v1 = v0->unk_44;
 
     ov101_021D814C(v1->unk_450, 10);
     v0->unk_08 = 1;
@@ -2448,7 +2448,7 @@ static void ov101_021D7D4C(SysTask *param0, void *param1)
 static void ov101_021D7D6C(SysTask *param0, void *param1)
 {
     UnkStruct_ov101_021D7D94 *v0 = param1;
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_44;
+    SlotMachineGameState *v1 = v0->unk_44;
 
     if (v0->unk_08 == 1) {
         ov101_021D8180(v1->unk_450, 10);
@@ -2460,7 +2460,7 @@ static void ov101_021D7D6C(SysTask *param0, void *param1)
 static void ov101_021D7D94(UnkStruct_ov101_021D7D94 *param0)
 {
     SysTask *v0;
-    UnkStruct_ov101_021D13C8 *v1 = param0->unk_44;
+    SlotMachineGameState *v1 = param0->unk_44;
 
     if (param0->unk_18 == 0) {
         ov101_021D80E4(v1->unk_450, (NNS_G2D_VRAM_TYPE_2DBOTH), v1->unk_438, 14, 10);

@@ -1,5 +1,5 @@
-#ifndef POKEPLATINUM_STRUCT_OV101_021D13C8_H
-#define POKEPLATINUM_STRUCT_OV101_021D13C8_H
+#ifndef POKEPLATINUM_STRUCT_SLOT_MACHINE_GAME_STATE_H
+#define POKEPLATINUM_STRUCT_SLOT_MACHINE_GAME_STATE_H
 
 #include <nnsys.h>
 
@@ -16,7 +16,7 @@
 #include "narc.h"
 #include "overworld_anim_manager.h"
 
-typedef struct UnkStruct_ov101_021D13C8_t {
+typedef struct SlotMachineGameState_t {
     u32 unk_00;
     u32 unk_04;
     u32 unk_08;
@@ -94,6 +94,6 @@ typedef struct UnkStruct_ov101_021D13C8_t {
     u32 unk_4BC;
     u32 unk_4C0;
     int msgBoxFrame;
-} UnkStruct_ov101_021D13C8;
+} SlotMachineGameState;
 
-#endif // POKEPLATINUM_STRUCT_OV101_021D13C8_H
+#endif // POKEPLATINUM_STRUCT_SLOT_MACHINE_GAME_STATE_H

@@ -10,7 +10,7 @@
 #include "slot_machine/slot_machine_lib.h"
 #include "slot_machine/slot_machine_anim.h"
 #include "slot_machine/slot_machine_sprites.h"
-#include "slot_machine/struct_ov101_021D13C8.h"
+#include "slot_machine/slot_machine_game_state.h"
 #include "slot_machine/struct_ov101_021D148C.h"
 #include "slot_machine/struct_ov101_021D1894.h"
 
@@ -41,41 +41,41 @@
 
 typedef struct {
     UnkStruct_0203E348 *unk_00;
-    UnkStruct_ov101_021D13C8 *unk_04;
+    SlotMachineGameState *unk_04;
 } UnkStruct_ov101_021D0F3C;
 
-static void ov101_021D0F3C(UnkStruct_ov101_021D0F3C *param0, UnkStruct_ov101_021D13C8 *param1);
-static UnkStruct_ov101_021D13C8 *ov101_021D0F6C(UnkStruct_0203E348 *param0);
-static void ov101_021D0F94(UnkStruct_ov101_021D13C8 *param0);
-static void ov101_021D0F9C(UnkStruct_ov101_021D13C8 *param0);
-static void ov101_021D107C(UnkStruct_ov101_021D13C8 *param0);
+static void ov101_021D0F3C(UnkStruct_ov101_021D0F3C *param0, SlotMachineGameState *param1);
+static SlotMachineGameState *ov101_021D0F6C(UnkStruct_0203E348 *param0);
+static void ov101_021D0F94(SlotMachineGameState *param0);
+static void ov101_021D0F9C(SlotMachineGameState *param0);
+static void ov101_021D107C(SlotMachineGameState *param0);
 static void ov101_021D1098(void);
 static void ov101_021D10B8(BgConfig *param0);
 static void ov101_021D11A4(BgConfig *param0);
 static void ov101_021D11D0(void);
-static void ov101_021D121C(UnkStruct_ov101_021D13C8 *param0);
+static void ov101_021D121C(SlotMachineGameState *param0);
 static void ov101_021D150C(void);
 static void ov101_021D1544(void);
-static void ov101_021D1550(UnkStruct_ov101_021D13C8 *param0);
-static void ov101_021D15A4(UnkStruct_ov101_021D13C8 *param0);
-static void ov101_021D15BC(UnkStruct_ov101_021D13C8 *param0);
-static void ov101_021D1868(UnkStruct_ov101_021D13C8 *param0);
-static void ov101_021D186C(UnkStruct_ov101_021D13C8 *param0);
-static void ov101_021D1884(UnkStruct_ov101_021D13C8 *param0);
-static int ov101_021D18B4(UnkStruct_ov101_021D13C8 *param0);
-static void ov101_021D18C0(UnkStruct_ov101_021D13C8 *param0);
-static void ov101_021D18E4(UnkStruct_ov101_021D13C8 *param0);
+static void ov101_021D1550(SlotMachineGameState *param0);
+static void ov101_021D15A4(SlotMachineGameState *param0);
+static void ov101_021D15BC(SlotMachineGameState *param0);
+static void ov101_021D1868(SlotMachineGameState *param0);
+static void ov101_021D186C(SlotMachineGameState *param0);
+static void ov101_021D1884(SlotMachineGameState *param0);
+static int ov101_021D18B4(SlotMachineGameState *param0);
+static void ov101_021D18C0(SlotMachineGameState *param0);
+static void ov101_021D18E4(SlotMachineGameState *param0);
 static void ov101_021D18F4(SysTask *param0, void *param1);
 static void ov101_021D197C(void *param0);
-static void ov101_021D19BC(UnkStruct_ov101_021D13C8 *param0);
-static void ov101_021D19D4(UnkStruct_ov101_021D13C8 *param0);
+static void ov101_021D19BC(SlotMachineGameState *param0);
+static void ov101_021D19D4(SlotMachineGameState *param0);
 static const WindowTemplate Unk_ov101_021D8588[1];
-static void ov101_021D1458(UnkStruct_ov101_021D13C8 *param0);
+static void ov101_021D1458(SlotMachineGameState *param0);
 
 int ov101_021D0D80(ApplicationManager *appMan, int *param1)
 {
     UnkStruct_ov101_021D0F3C *v0;
-    UnkStruct_ov101_021D13C8 *v1;
+    SlotMachineGameState *v1;
     UnkStruct_0203E348 *v2;
 
     SetVBlankCallback(NULL, NULL);
@@ -112,7 +112,7 @@ int ov101_021D0D80(ApplicationManager *appMan, int *param1)
 int ov101_021D0E40(ApplicationManager *appMan, int *param1)
 {
     UnkStruct_ov101_021D0F3C *v0 = ApplicationManager_Data(appMan);
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_04;
+    SlotMachineGameState *v1 = v0->unk_04;
 
     switch (*param1) {
     case 0:
@@ -147,7 +147,7 @@ int ov101_021D0E40(ApplicationManager *appMan, int *param1)
 int ov101_021D0EE4(ApplicationManager *appMan, int *param1)
 {
     UnkStruct_ov101_021D0F3C *v0 = ApplicationManager_Data(appMan);
-    UnkStruct_ov101_021D13C8 *v1 = v0->unk_04;
+    SlotMachineGameState *v1 = v0->unk_04;
 
     SetVBlankCallback(NULL, NULL);
 
@@ -169,7 +169,7 @@ int ov101_021D0EE4(ApplicationManager *appMan, int *param1)
     return 1;
 }
 
-static void ov101_021D0F3C(UnkStruct_ov101_021D0F3C *param0, UnkStruct_ov101_021D13C8 *param1)
+static void ov101_021D0F3C(UnkStruct_ov101_021D0F3C *param0, SlotMachineGameState *param1)
 {
     u32 v0 = param1->unk_60;
 
@@ -185,9 +185,9 @@ static void ov101_021D0F3C(UnkStruct_ov101_021D0F3C *param0, UnkStruct_ov101_021
     }
 }
 
-static UnkStruct_ov101_021D13C8 *ov101_021D0F6C(UnkStruct_0203E348 *param0)
+static SlotMachineGameState *ov101_021D0F6C(UnkStruct_0203E348 *param0)
 {
-    UnkStruct_ov101_021D13C8 *v0 = ov101_021D1998(sizeof(UnkStruct_ov101_021D13C8));
+    SlotMachineGameState *v0 = ov101_021D1998(sizeof(SlotMachineGameState));
 
     v0->unk_60 = *(param0->unk_00);
     v0->unk_88 = param0->unk_04;
@@ -196,12 +196,12 @@ static UnkStruct_ov101_021D13C8 *ov101_021D0F6C(UnkStruct_0203E348 *param0)
     return v0;
 }
 
-static void ov101_021D0F94(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D0F94(SlotMachineGameState *param0)
 {
     Heap_Free(param0);
 }
 
-static void ov101_021D0F9C(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D0F9C(SlotMachineGameState *param0)
 {
     param0->unk_43C = BgConfig_New(HEAP_ID_79);
 
@@ -233,7 +233,7 @@ static void ov101_021D0F9C(UnkStruct_ov101_021D13C8 *param0)
     SetVBlankCallback(ov101_021D197C, param0);
 }
 
-static void ov101_021D107C(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D107C(SlotMachineGameState *param0)
 {
     ov101_021D11A4(param0->unk_43C);
     ov101_021D15A4(param0);
@@ -372,7 +372,7 @@ static void ov101_021D11D0(void)
     G2_SetWnd0Position(0, 0, 255, 255);
 }
 
-static void ov101_021D121C(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D121C(SlotMachineGameState *param0)
 {
     void *v0 = ov101_021D19E4(param0, 3, 0);
 
@@ -419,7 +419,7 @@ static void ov101_021D121C(UnkStruct_ov101_021D13C8 *param0)
     Heap_Free(v0);
 }
 
-void ov101_021D13C8(UnkStruct_ov101_021D13C8 *param0)
+void ov101_021D13C8(SlotMachineGameState *param0)
 {
     int v0;
     UnkStruct_ov101_021D148C *v1 = &param0->unk_408;
@@ -438,7 +438,7 @@ void ov101_021D13C8(UnkStruct_ov101_021D13C8 *param0)
     v1->unk_18 = String_Init(256, HEAP_ID_79);
 }
 
-void ov101_021D1458(UnkStruct_ov101_021D13C8 *param0)
+void ov101_021D1458(SlotMachineGameState *param0)
 {
     int v0;
     UnkStruct_ov101_021D148C *v1 = &param0->unk_408;
@@ -453,7 +453,7 @@ void ov101_021D1458(UnkStruct_ov101_021D13C8 *param0)
     String_Free(v1->unk_18);
 }
 
-void ov101_021D148C(UnkStruct_ov101_021D13C8 *param0, u32 param1)
+void ov101_021D148C(SlotMachineGameState *param0, u32 param1)
 {
     UnkStruct_ov101_021D148C *v0 = &param0->unk_408;
 
@@ -464,7 +464,7 @@ void ov101_021D148C(UnkStruct_ov101_021D13C8 *param0, u32 param1)
     Window_ScheduleCopyToVRAM(&v0->unk_08[0]);
 }
 
-void ov101_021D14E4(UnkStruct_ov101_021D13C8 *param0)
+void ov101_021D14E4(SlotMachineGameState *param0)
 {
     UnkStruct_ov101_021D148C *v0 = &param0->unk_408;
 
@@ -491,7 +491,7 @@ static void ov101_021D1544(void)
     PlttTransfer_Free();
 }
 
-static void ov101_021D1550(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D1550(SlotMachineGameState *param0)
 {
     NNS_G2dInitOamManagerModule();
 
@@ -500,14 +500,14 @@ static void ov101_021D1550(UnkStruct_ov101_021D13C8 *param0)
     ov101_021D15BC(param0);
 }
 
-static void ov101_021D15A4(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D15A4(SlotMachineGameState *param0)
 {
     ov101_021D1868(param0);
     ov101_021D7FB4(param0->unk_450);
     RenderOam_Free();
 }
 
-static void ov101_021D15BC(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D15BC(SlotMachineGameState *param0)
 {
     ov101_021D80E4(param0->unk_450, NNS_G2D_VRAM_TYPE_2DMAIN, param0->unk_438, 11, 0);
     ov101_021D80E4(param0->unk_450, NNS_G2D_VRAM_TYPE_2DMAIN, param0->unk_438, 21, 1);
@@ -558,22 +558,22 @@ static void ov101_021D15BC(UnkStruct_ov101_021D13C8 *param0)
     ov101_021D8254(param0->unk_450, 7);
 }
 
-static void ov101_021D1868(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D1868(SlotMachineGameState *param0)
 {
     return;
 }
 
-static void ov101_021D186C(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D186C(SlotMachineGameState *param0)
 {
     param0->unk_44C = OverworldAnimManagerList_New(HEAP_ID_79, 128);
 }
 
-static void ov101_021D1884(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D1884(SlotMachineGameState *param0)
 {
     OverworldAnimManagerList_FinishAndFree(param0->unk_44C);
 }
 
-void ov101_021D1894(UnkStruct_ov101_021D13C8 *param0, UnkEnum_ov101_021D1894 param1)
+void ov101_021D1894(SlotMachineGameState *param0, UnkEnum_ov101_021D1894 param1)
 {
     UnkStruct_ov101_021D1894 *v0 = &param0->unk_424;
 
@@ -586,13 +586,13 @@ void ov101_021D1894(UnkStruct_ov101_021D13C8 *param0, UnkEnum_ov101_021D1894 par
     v0->unk_04 = 1;
 }
 
-static int ov101_021D18B4(UnkStruct_ov101_021D13C8 *param0)
+static int ov101_021D18B4(SlotMachineGameState *param0)
 {
     UnkStruct_ov101_021D1894 *v0 = &param0->unk_424;
     return v0->unk_04;
 }
 
-static void ov101_021D18C0(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D18C0(SlotMachineGameState *param0)
 {
     UnkStruct_ov101_021D1894 *v0 = &param0->unk_424;
 
@@ -601,14 +601,14 @@ static void ov101_021D18C0(UnkStruct_ov101_021D13C8 *param0)
     v0->unk_10 = SysTask_Start(ov101_021D18F4, param0, 144);
 }
 
-static void ov101_021D18E4(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D18E4(SlotMachineGameState *param0)
 {
     SysTask_Done(param0->unk_424.unk_10);
 }
 
 static void ov101_021D18F4(SysTask *param0, void *param1)
 {
-    UnkStruct_ov101_021D13C8 *v0 = param1;
+    SlotMachineGameState *v0 = param1;
     UnkStruct_ov101_021D1894 *v1 = &v0->unk_424;
 
     switch (v1->unk_00) {
@@ -651,7 +651,7 @@ static void ov101_021D18F4(SysTask *param0, void *param1)
 
 static void ov101_021D197C(void *param0)
 {
-    UnkStruct_ov101_021D13C8 *v0 = param0;
+    SlotMachineGameState *v0 = param0;
 
     VramTransfer_Process();
     RenderOam_Transfer();
@@ -668,17 +668,17 @@ void *ov101_021D1998(u32 param0)
     return v0;
 }
 
-static void ov101_021D19BC(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D19BC(SlotMachineGameState *param0)
 {
     param0->unk_438 = NARC_ctor(NARC_INDEX_DATA__SLOT, HEAP_ID_79);
 }
 
-static void ov101_021D19D4(UnkStruct_ov101_021D13C8 *param0)
+static void ov101_021D19D4(SlotMachineGameState *param0)
 {
     NARC_dtor(param0->unk_438);
 }
 
-void *ov101_021D19E4(UnkStruct_ov101_021D13C8 *param0, u32 param1, int param2)
+void *ov101_021D19E4(SlotMachineGameState *param0, u32 param1, int param2)
 {
     void *v0;
     u32 v1 = NARC_GetMemberSize(param0->unk_438, param1);

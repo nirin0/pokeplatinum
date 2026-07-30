@@ -1,10 +1,10 @@
 #ifndef POKEPLATINUM_STRUCT_OV101_021D4F58_H
 #define POKEPLATINUM_STRUCT_OV101_021D4F58_H
 
-#include "slot_machine/struct_ov101_021D13C8_decl.h"
+#include "slot_machine/slot_machine_game_state_decl.h"
 
 typedef struct {
-    UnkStruct_ov101_021D13C8 *unk_00;
+    SlotMachineGameState *unk_00;
     u16 unk_04[16];
     u16 unk_24[16];
     u16 unk_44[16];
