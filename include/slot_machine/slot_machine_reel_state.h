@@ -1,5 +1,5 @@
-#ifndef POKEPLATINUM_STRUCT_OV101_021D2D88_H
-#define POKEPLATINUM_STRUCT_OV101_021D2D88_H
+#ifndef POKEPLATINUM_SLOT_MACHINE_REEL_STATE_H
+#define POKEPLATINUM_SLOT_MACHINE_REEL_STATE_H
 
 #include "slot_machine/slot_machine_game_state_decl.h"
 
@@ -16,6 +16,6 @@ typedef struct {
     int unk_18;
     SysTask *unk_1C;
     SlotMachineGameState *unk_20;
-} UnkStruct_ov101_021D2D88;
+} SlotMachineReelState;
 
-#endif // POKEPLATINUM_STRUCT_OV101_021D2D88_H
+#endif // POKEPLATINUM_SLOT_MACHINE_REEL_STATE_H

@@ -5,7 +5,7 @@
 
 #include "slot_machine/struct_ov101_021D148C.h"
 #include "slot_machine/struct_ov101_021D1894.h"
-#include "slot_machine/struct_ov101_021D2D88.h"
+#include "slot_machine/slot_machine_reel_state.h"
 #include "slot_machine/struct_ov101_021D4714.h"
 #include "slot_machine/struct_ov101_021D4764.h"
 #include "slot_machine/struct_ov101_021D4F58.h"
@@ -52,7 +52,7 @@ typedef struct SlotMachineGameState_t {
     fx32 unk_90[3];
     fx32 unk_9C[3];
     int unk_A8[3];
-    UnkStruct_ov101_021D2D88 unk_B4[3];
+    SlotMachineReelState unk_B4[3];
     UnkStruct_ov101_021D4714 unk_120;
     UnkStruct_ov101_021D4764 unk_13C;
     UnkStruct_ov101_021D4F58 unk_184;
